@@ -7,8 +7,9 @@ Dès que app/models.py définit `Base` (TP3), l'autogénération fonctionne :
 import asyncio
 import os
 
-from alembic import context
 from sqlalchemy.ext.asyncio import create_async_engine
+
+from alembic import context
 
 # La cible des migrations : la metadata de vos modèles (créés au TP3).
 try:

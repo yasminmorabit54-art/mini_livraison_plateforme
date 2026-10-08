@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException, status
+
 from app.schemas import ProduitCreate, ProduitRead
 
 router = APIRouter(prefix="/produits", tags=["produits"])
@@ -46,4 +47,4 @@ async def supprimer(produit_id: int):
         raise HTTPException(status_code=404, detail="Produit introuvable")
     
     del _db[produit_id]
-    return 
+     
