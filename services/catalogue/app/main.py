@@ -1,5 +1,5 @@
-from fastapi import FastAPI
 from app.routes import router # Importation directe
+from fastapi import FastAPI
 
 app = FastAPI(title="Service Catalogue")
 

@@ -46,4 +46,4 @@ async def supprimer(produit_id: int):
         raise HTTPException(status_code=404, detail="Produit introuvable")
     
     del _db[produit_id]
-    return None
+    return 
