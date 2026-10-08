@@ -1,22 +1,11 @@
-"""Point d'entrée du service Catalogue — squelette fourni.
-
-Fonctionne dès le TP1 (route /health). Les routeurs que vous créerez au fil
-des TP sont branchés automatiquement s'ils existent (import défensif).
-"""
 from fastapi import FastAPI
+from app.routes import router # Importation directe
 
 app = FastAPI(title="Service Catalogue")
 
+# Mettre l'inclusion juste ici
+app.include_router(router)
 
 @app.get("/health", tags=["monitoring"])
 async def health():
     return {"status": "ok", "service": "catalogue"}
-
-
-# Le routeur métier (app/routes.py) est branché dès que vous le créez (TP2).
-try:
-    from app.routes import router  # noqa: E402
-
-    app.include_router(router)
-except ImportError:
-    pass
