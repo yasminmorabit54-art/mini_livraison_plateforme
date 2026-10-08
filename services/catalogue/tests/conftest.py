@@ -15,9 +15,10 @@ from app.main import app
 
 # ---- Base de test (activée dès que app/db.py et app/models.py existent, TP3+) ----
 try:
-    from app import db
     from app.models import Base
     from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
+
+    from app import db_engine
 
     _engine = create_async_engine("sqlite+aiosqlite:///:memory:")
     db.engine = _engine
