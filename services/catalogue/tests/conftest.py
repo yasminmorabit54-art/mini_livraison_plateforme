@@ -18,7 +18,7 @@ try:
     from app.models import Base
     from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
-    from app import db_engine
+    from app import db
 
     _engine = create_async_engine("sqlite+aiosqlite:///:memory:")
     db.engine = _engine
